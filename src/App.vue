@@ -1,33 +1,39 @@
 <template>
-  <h1 @click="changeMessage">
-    {{ msg }}
+  <h1
+    :style="[fontStyle, backgroundStyle]"
+    @click="changeStyle">
+    Hello!
   </h1>
-  <h1> {{ reversedMessage }}</h1>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      msg : "Hello?"
-    }
-  },
-  computed: {
-    reversedMessage() {
-      return this.msg.split('').reverse().join('')
-    }
-  },
-  watch: {
-    msg(newValue) {
-      console.log(newValue)
-    },
-    reversedMessage() {
-      console.log('reversedMessage: ', this.reversedMessage)
+      fontStyle: {
+        color: 'orange',
+        fontSize: '20px'
+      },
+      backgroundStyle: {
+        backgroundColor: 'black'
+      }
     }
   },
   methods: {
-    changeMessage() {
-      this.msg = "Good!"
+    activate() {
+      this.isActive = !this.isActive
+    },
+    changeStyle() {
+      this.fontStyle.color = 'red',
+      this.fontStyle.fontSize = '50px'
     }
   }
-}</script>
+}
+</script>
+
+<style scoped>
+  .active {
+    color: red;
+    font-weight: bold;
+  }
+</style>
