@@ -18,19 +18,3 @@ export default {
     }
   }
 }</script>
-
-<style scoped lang="scss">
-.parent {
-  width: 200px;
-  height: 100px;
-  background-color: royalblue;
-  margin: 10px;
-  padding: 10px;
-  overflow: auto;
-  .child {
-    width: 100px;
-    height: 2000px;
-    background-color: orange;
-  }
-}
-</style>
