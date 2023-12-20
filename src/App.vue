@@ -1,28 +1,21 @@
 <template>
-  <h1> {{ msg }}</h1>
+  <h1>{{ msg }}</h1>
   <input
     type="text"
-    v-model="msg">
-  <h1>{{ checked }}</h1>
-  <input
-    type="checkbox"
-    name=""
-    id=""
-    v-model="checked">
+    v-model.number="msg">
 </template>
 
-<script> 
+<script>
 export default {
   data() {
     return {
-      msg: 'hello world',
-      checked: false
+      msg: 123
     }
   },
-  methods: {
-    handler(event) {
-      console.log(event.target.value)
-      this.msg = event.target.value
+  watch: {
+    msg() {
+      console.log(this.msg.trim())
     }
   }
-}</script>
+}
+</script>
