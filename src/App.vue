@@ -1,8 +1,5 @@
 <template>
-  <MyBtn
-    class="amylo"
-    style="color: red"
-    title="Hello World">
+  <MyBtn @click="log" @change-msg="LogMsg">
     Banana
   </MyBtn>
 </template>
@@ -13,5 +10,14 @@ import MyBtn from '~/components/MyBtn'
 export default {
   components: {
     MyBtn
+  },
+  methods: {
+    log() {
+      console.log('Click!')
+    },
+    LogMsg(msg) {
+      console.log(msg)
+    }
   }
-}</script>
+}
+</script>
