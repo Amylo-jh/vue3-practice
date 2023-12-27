@@ -1,6 +1,7 @@
 <template>
-  <MyBtn @click="log" @change-msg="LogMsg">
-    Banana
+  <MyBtn>
+    <template v-slot:text>banana</template>
+    <template v-slot:icon>b</template>
   </MyBtn>
 </template>
 
@@ -10,14 +11,5 @@ import MyBtn from '~/components/MyBtn'
 export default {
   components: {
     MyBtn
-  },
-  methods: {
-    log() {
-      console.log('Click!')
-    },
-    LogMsg(msg) {
-      console.log(msg)
-    }
   }
-}
-</script>
+}</script>
