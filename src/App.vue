@@ -1,29 +1,21 @@
 <template>
-  <h1 @click="increase">
-    {{ count }} / {{ doubleCount }}
-  </h1>
-  <h1> {{ message }} / {{ reversedMessage }}</h1>
+  <div @click="increase">
+    {{ count }}
+  </div>
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
-  data() {
+   setup() {
+    let count = ref(0)
+    function increase() {
+      count.value += 1
+    }
+
     return {
-      message: 'hello world!',
-      count: 0
+      count,
+      increase
     }
-  },
-  computed: {
-    doubleCount() {
-      return this.count * 2
-    },
-    reversedMessage() {
-      return this.message.split('').reverse().join('')
-    }
-  },
-  methods: {
-    increase() {
-      this.count += 1
-    }
-  }
+   }
 }</script>
